@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: exam-app
+  name: despliegue-exam-1
   labels:
-    name: exam-app
+    name: despliegue-exam-1
     app: exam-kube-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: testing-kube-pod
+      name: exam-kube-pod
       app: exam-kube-app
   template:
     metadata:
