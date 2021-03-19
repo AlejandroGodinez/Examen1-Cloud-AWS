@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exam-app
+  labels:
+    name: exam-app
+    app: exam-kube-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: testing-kube-pod
+      app: exam-kube-app
+  template:
+    metadata:
+      name: exam-kube-pod
+      labels:
+        name: exam-kube-pod
+        app: exam-kube-app
+    spec:
+      containers:
+        - name: exam-kube-container
+          image: ":latest"
+          imagePullPolicy: Always
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+            requests:
+              memory: 128Mi
+              cpu: "0.2"
+          livenessProbe:
+            httpGet:
+              path: /revisasivivo
+              port: 8888
+            initialDelaySeconds: 5
+            periodSeconds: 5
