@@ -32,6 +32,6 @@ spec:
           livenessProbe:
             httpGet:
               path: /revisasivivo
-              port: 8888
+              port: 8080
             initialDelaySeconds: 5
             periodSeconds: 5
