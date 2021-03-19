@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: exam-kube-container
-          image: ":latest"
+          image: "345554669220.dkr.ecr.us-east-1.amazonaws.com/exam-aws-1:latest"
           imagePullPolicy: Always
           resources:
             limits:
