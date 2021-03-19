@@ -14,7 +14,7 @@ router.route('/').get((req, res) => {
 router.route('/').post((req, res)=>{
     let textAnalyze = req.body.sendText
     
-    fetch('http://localhost:8888/servicio', {
+    fetch('https://cloud-ibm-cf.us-south.cf.appdomain.cloud/'+'servicio', {
         method: 'post',
         body:    JSON.stringify({sendText: textAnalyze}),
         headers: { 'Content-Type': 'application/json' },
